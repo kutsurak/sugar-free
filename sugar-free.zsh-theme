@@ -13,8 +13,8 @@
 # ------------------------------------------------------------------------------
 
 # Modify the colors and symbols in these variables as desired.
-GIT_PROMPT_PREFIX="%{$fg[white]%}(%{$reset_color%}"
-GIT_PROMPT_SUFFIX="%{$fg[white]%})%{$reset_color%}"
+GIT_PROMPT_PREFIX="%{$fg[green]%}(%{$reset_color%}"
+GIT_PROMPT_SUFFIX="%{$fg[green]%})%{$reset_color%}"
 
 # These colors match my .gitconfig:
 # [color "status"]
@@ -57,7 +57,7 @@ parse_git_state() {
 # If inside a Git repository, print its branch and state
 git_prompt_string() {
   local git_where="$(parse_git_branch)"
-  [ -n "$git_where" ] && echo "$GIT_PROMPT_PREFIX%{$fg[white]%}${git_where#(refs/heads/|tags/)}$(parse_git_state)$GIT_PROMPT_SUFFIX"
+  [ -n "$git_where" ] && echo "$GIT_PROMPT_PREFIX%{$fg[green]%}${git_where#(refs/heads/|tags/)}$(parse_git_state)$GIT_PROMPT_SUFFIX"
 }
 
 PROMPT=$'%{$fg[blue]%}%n %{$reset_color%}%{$fg[green]%}[%~]%{$reset_color%} $(git_prompt_string) \
